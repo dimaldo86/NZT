@@ -1,0 +1,18 @@
+#app {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Graphik LCG';
+    font-weight: 400;
+    line-height: normal;
+    font-style: normal
+}
+.container {
+    max-width: 1364px;
+    width: 100%;
+}
+
+p {
+    margin-bottom: 0;
+}
