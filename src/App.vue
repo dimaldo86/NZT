@@ -1,6 +1,8 @@
 <template>
     <Header />
     <main>
+        <Info />
+        <Desc />
         <Benefits :cards="cardInfo"/>
         <Slider :items="slideInfo"/>
         <Expert
@@ -19,6 +21,8 @@ import Footer from './layouts/footer/Footer.vue'
 import Expert from './components/Expert.vue'
 import Slider from './components/Slider.vue'
 import Benefits from "./components/Benefits.vue"
+import Desc from "./components/Desc.vue"
+import Info from "./components/Info.vue"
 
 </script>
 <style scoped>

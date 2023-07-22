@@ -91,8 +91,6 @@ const breakpoints = {
 <style lang="scss" scoped>
 
 .slider {
-    padding: 60px 0;
-
     &__buttons {
         position: relative;
         width: 100%;
@@ -197,11 +195,4 @@ const breakpoints = {
         }
     }
 }
-
-@media (max-width: 992px) {
-    .slider {
-        padding: 50px 0;
-    }
-}
-
 </style>

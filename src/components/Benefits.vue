@@ -34,8 +34,6 @@ const prop = defineProps({
 
 <style lang="scss" scoped>
 .benefits {
-    padding: 60px 0;
-
     &__wrap {
         width: 100%;
         display: flex;
@@ -107,8 +105,6 @@ const prop = defineProps({
 }
 @media (max-width: 992px) {
     .benefits {
-        padding: 50px 0;
-
         &__wrap {
             flex-wrap: wrap;
             gap: 46px;
@@ -121,8 +117,6 @@ const prop = defineProps({
 }
 @media (max-width: 768px) {
     .benefits {
-        padding: 40px 0;
-
         &__wrap {
             gap: 30px;
         }
@@ -134,8 +128,6 @@ const prop = defineProps({
 }
 @media (max-width: 576px) {
     .benefits {
-        padding: 30px 0;
-
         &__wrap {
             flex-direction: column;
         }
@@ -148,8 +140,6 @@ const prop = defineProps({
 }
 @media (max-width: 375px) {
     .benefits {
-        padding: 20px 0;
-
         &__card {
             height: 270px;
 
