@@ -16,7 +16,6 @@
                     prevEl: prev,
                     nextEl: next,
                 }"
-                :slidesPerView="slidesPerView"
                 :spaceBetween="44"
                 :breakpoints="breakpoints"
             >
@@ -35,12 +34,12 @@
                         </div>
                     </div>
                     <p class="expert__slide-body">{{ item.quote }}</p>
-                    <div class="expert__slide-footer">
+                    <a href="#" class="expert__slide-footer">
                         <span>Смотреть видео</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
                             <path d="M1 1L6 6L1 11" stroke="white" stroke-width="2"/>
                         </svg>
-                    </div>
+                    </a>
                 </Swiper-slide>
             </Swiper>
         </div>
@@ -64,10 +63,6 @@ const props = defineProps({
     subtitle: {
         type:String,
         required:false
-    },
-    slidesPerView:{
-        type:String,
-        required:true
     },
     items:{
         type:Array,
@@ -186,7 +181,24 @@ const breakpoints = {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            text-decoration: none;
+            transition: $transition;
 
+            &:hover {
+                span {
+                    color: $gray;
+                }
+
+
+                    svg {
+                        cursor: pointer;
+
+                        path {
+                            transition: $transition;
+                            stroke: $gray;
+                            }
+                    }
+                }
 
             span {
                 color: #FFF;
@@ -194,24 +206,10 @@ const breakpoints = {
                 font-weight: 500;
                 cursor: pointer;
                 transition: $transition;
-
-                &:hover {
-                    color: $gray;
-                }
             }
 
             svg {
                 cursor: pointer;
-
-                path {
-                    transition: $transition;
-                    }
-
-                &:hover {
-                    path {
-                        stroke: $gray;
-                    }
-                }
             }
         }
     }
@@ -223,6 +221,7 @@ const breakpoints = {
 @media (max-width: 992px) {
     .expert {
         padding: 50px 0 90px;
+
         &__title {
             width: 100%;
         }
