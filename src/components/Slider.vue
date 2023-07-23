@@ -16,8 +16,9 @@
                 }"
                 :slidesPerView="1"
                 :spaceBetween="44"
-                :breakpoints="breakpoints"
                 :effect="'creative'"
+                :grabCursor="false"
+                :breakpoints="breakpoints"
             >
                 <Swiper-slide
                     v-for="item in items"
@@ -48,7 +49,7 @@
 <script setup>
 import { ref } from 'vue'
 import { Swiper, SwiperSlide } from "swiper/vue"
-import { Navigation,   EffectCreative } from 'swiper/modules'
+import { Navigation, EffectCreative } from 'swiper/modules'
 import "swiper/css"
 import 'swiper/css/navigation'
 import 'swiper/css/effect-creative'
@@ -61,7 +62,7 @@ const prop = defineProps({
     }
 })
 
-const modules = [Navigation,  EffectCreative]
+const modules = [Navigation, EffectCreative]
 const prev = ref(null)
 const next = ref(null)
 
@@ -72,7 +73,6 @@ const breakpoints = {
     },
     992: {
         grabCursor:"true",
-
         creativeEffect:{
             prev: {
                 shadow: true,
@@ -95,8 +95,6 @@ const breakpoints = {
         position: relative;
         width: 100%;
         height: 23px;
-
-
     }
 
     .swiper-button-prev {
@@ -121,12 +119,12 @@ const breakpoints = {
         &-img {
             max-width: 880px;
             width: 100%;
-            border-radius: 5px 0px 0px 5px;
 
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                border-radius: 5px 0px 0px 5px;
             }
         }
 
@@ -193,6 +191,78 @@ const breakpoints = {
                 padding: 45px 80px 45px;
             }
         }
+    }
+}
+
+@media (max-width: 992px) {
+    .slider {
+        &__slide {
+            height: 450px;
+
+            &-text {
+                font-size: 20px;
+            }
+        }
+    }
+}
+@media (max-width: 768px) {
+    .slider {
+        &__slide {
+            height: 400px;
+
+            &-info {
+                padding: 15px;
+            }
+
+            &-link {
+               margin-top: 20px;
+            }
+        }
+    }
+}
+@media (max-width: 576px) {
+    .slider {
+        &__slide {
+            position: relative;
+            flex-direction: column;
+            min-height: 400px;
+
+            &-img {
+                img {
+                    border-radius: 5px 5px 0px 0px;
+                }
+            }
+
+            &-info {
+                position: absolute;
+                bottom: 10px;
+                width: 100%;
+                border-radius: 0 0px 5px 5px;
+            }
+
+            &-text, &-link {
+                font-size: 16px;
+            }
+        }
+
+    }
+}
+@media (max-width: 425px) {
+    .slider {
+        &__slide {
+            min-height: 420px;
+
+            &-img {
+                img {
+                    min-height: 300px;
+                }
+            }
+
+            &-text, &-link, &-date {
+                font-size: 14px;
+            }
+        }
+
     }
 }
 </style>

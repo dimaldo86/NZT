@@ -1,6 +1,7 @@
 <template>
     <Header />
     <main>
+        <Banner />
         <Info />
         <Desc />
         <Benefits :cards="cardInfo"/>
@@ -23,6 +24,7 @@ import Slider from './components/Slider.vue'
 import Benefits from "./components/Benefits.vue"
 import Desc from "./components/Desc.vue"
 import Info from "./components/Info.vue"
+import Banner from "./components/Banner.vue"
 
 </script>
 <style scoped>
